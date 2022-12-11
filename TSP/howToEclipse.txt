@@ -1,0 +1,33 @@
+1. Lanciare eclipse
+
+2. Creare un progetto java con JRE settata a java 11, deselezionare module info, settare avviso "in fondo" a java 11, settare project layout alla prima opzione (.class e .java nella stessa cartella)
+
+3. Aprire terminale e scrivere: "set | grep -i classpath", guardare dove si trova javassist (nel laboratorio si trova in /usr/share/java/javassist.jar)
+
+4. Su eclipse tasto destro su JRE system library > build path > configure build path > classpath > add external JAR
+
+5. Selezionare /usr/share/java/javassist.jar e fare tasto destro refresh su referenced libraries
+
+6. Importare javassist come "import javassist.*"
+
+L'esempio è stato fatto con javassist ma all'esame potrebbe chiedere anche BCEL
+
+---
+
+Usare Eclipse per scrivere il codice ma usare il terminale per compilare ed eseguire il programma.
+
+Snippets: Ctrl + Space
+
+Format: Ctrl + Shift + F
+
+Terminal: Ctrl + Alt + T
+
+Undo: Ctrl + Z
+
+Redo: Ctrl + Shift + Z
+
+Sysout shortcut: "sysout" + Ctrl + Space
+
+Font size: Window > Preferences > General > Appearance > Colors and Fonts > Java > Java Editor Text Font
+
+Dark theme: Window > Preferences > General > Appearance > Theme
