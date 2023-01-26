@@ -2,7 +2,7 @@ prog   ::= task { task }
 task   ::= "task" tname "{" oplst "}"
 
 
-oplst  ::= op { "\n" op }
+oplst  ::= op { op } /* op { "\n" op } => WHITESPACE IS SKIPPED BY DEFAULT YOU CAN'T USE THIS!!! */
 op     ::= remove | rename | merge | backup
 
 remove ::= "remove" fname
