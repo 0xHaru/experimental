@@ -1,0 +1,22 @@
+prog    ::= "print" expr "where" decl
+
+expr    ::= term { "+" term }
+decl    ::= '' | assign { "," assign }
+
+assign  ::= ident "=" int
+term    ::= ident | int
+
+ident   ::= letter { letter }
+letter  ::= "A" | ... | "Z" | "a" | ... | "z"
+
+int     ::= ["-"] digit { digit }
+digit   ::= 0 | ... | 9
+
+---
+
+Example:
+    print x + y + z + 1 + x + -3 where x = 25, y = 1, z=-7
+
+Note:
+    '' -> epsilon production
+    print 1 + 1 where

@@ -1,0 +1,32 @@
+prog   ::= task { task }
+task   ::= "task" tname "{" oplst "}"
+
+
+oplst  ::= op { "\n" op }
+op     ::= remove | rename | merge | backup
+
+remove ::= "remove" fname
+rename ::= "rename" fname fname
+merge  ::= "merge"  fname fname fname
+backup ::= "backup" fname fname
+
+fname  ::= "\"" stringLiteral "\""
+tname  ::= [a-zA-Z][a-zA-Z0-9]*
+
+---
+
+Example:
+
+task TaskOne {
+    remove "application.debug.old"
+    rename "application.debug" "application.debug.old"
+}
+
+task TaskTwo {
+    backup "access.error" "security.logs"
+    backup "system.error" "system.logs"
+}
+
+task TaskThree {
+    merge "security.logs" "system.logs" "security+system.logs"
+}

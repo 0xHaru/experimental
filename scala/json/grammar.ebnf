@@ -1,0 +1,9 @@
+value   ::= obj | arr | stringLiteral | floatingPointNumber | "null" | "true" | "false"
+
+obj     ::= "{" [members] "}"
+arr     ::= "[" [values] "]"
+
+members ::= member { "," member }
+member  ::= stringLiteral ":" value
+
+values  ::= value { "," value }
