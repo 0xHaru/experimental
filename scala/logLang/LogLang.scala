@@ -84,7 +84,7 @@ class LogLangParser extends JavaTokenParsers {
 
   def op: Parser[Op] = remove | rename | merge | backup
 
-  def oplst: Parser[List[Op]] = rep(op) // repsep(op, "\n")
+  def oplst: Parser[List[Op]] = rep(op) // repsep(op, "\n") => WHITESPACE IS SKIPPED BY DEFAULT YOU CAN'T USE THIS!!!
 
   def task: Parser[Task] =
     "task" ~> tname ~ ("{" ~> oplst <~ "}") ^^ {
