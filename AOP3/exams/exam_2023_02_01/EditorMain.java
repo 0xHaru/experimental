@@ -38,7 +38,7 @@ public class EditorMain {
 }
 
 // Compile and run with: ajc -1.9 *.aj *.java && aj EditorMain
-// Remove *.lass: rm -f *.class
+// Remove *.class: rm -f *.class
 
 // Output:
 // [a, b, c, d, e, f, g, h, i, j, k]
