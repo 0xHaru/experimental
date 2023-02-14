@@ -1,0 +1,26 @@
+Quando usi le tuple come parametri di funzione RICORDATI le graffe!!!
+
+OCCHIO ALLE TUPLE!!! GRAFFE!!!
+
+[io:format("~p ~p~n", [Pid, Rep]) || Pid <- Slaves, Rep <- lists:seq(1, M)]
+
+ATTENZIONE!! Stai facendo il prodotto cartesiano!!!
+
+<0.84.0> 1
+<0.84.0> 2
+<0.85.0> 1
+<0.85.0> 2
+
+----
+
+Gotchas for distributed erlang:
+
+- register() does NOT work on nonlocal PIDs, I cannot register a PID of a process running on different node
+
+- I can send a message to a process running on another node that was registered by using its registered name, here's an example:
+  [server@lab] : server.erl -> register(server, serverPid)
+  [client@lab] : client.erl -> {server, 'server@lab'} ! Msg
+
+- spawn() always requires node() when spawning a process on a different node
+
+- group_leader(whereis(user), self()) allows for io on different terminals, place it as the first line on the first function called for that module
