@@ -1,0 +1,23 @@
+link(Pid) works with PIDs of processes running on different a different node!
+
+Example:
+
+CLIENT
+
+(client@lab)1> rpc:call(server@lab, erlang, whereis, [server]).
+<10167.92.0>
+(client@lab)2> link(list_to_pid("<10167.92.0>")).
+true
+(client@lab)3> exit("dead").
+** exception exit: "dead"
+(client@lab)4> 
+
+SERVER
+
+(server@lab)1> self().
+<0.92.0>
+(server@lab)2> register(server, self()).
+true
+(server@lab)4> self().
+<0.101.0>
+(server@lab)5> 

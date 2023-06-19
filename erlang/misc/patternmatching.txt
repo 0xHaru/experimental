@@ -1,0 +1,19 @@
+example(N) ->
+    receive
+        {example, N} ->
+            % Do stuff...
+        {example, Any} ->
+        	% Do other stuff...
+    end.
+
+The second occurrence of N won't shadow the previous one, the first match will succeed for example if I call example(10) and send a message like {example, 10}.
+
+This is a bit confusing though and there's a better way of doing it using guards:
+
+example(N) ->
+    receive
+        {example, M} when M =:= N ->
+            % Do stuff...
+        {example, M} ->
+        	% Do other stuff...
+    end.

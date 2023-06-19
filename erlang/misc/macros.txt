@@ -1,0 +1,27 @@
+Source: Programming Erlang p. 130
+
+Erlang macros are written as shown here:
+
+-define(Constant, Replacement).
+-define(Func(Var1, Var2,.., Var), Replacement).
+
+Macros are expanded by the Erlang preprocessor epp when an expression of
+the form ?MacroName is encountered. Variables occurring in the macro definition
+match complete forms in the corresponding site of the macro call.
+
+-define(macro1(X, Y), {a, X, Y}).
+
+foo(A) ->
+    ?macro1(A+10, b)
+
+That expands into this:
+
+foo(A) ->
+    {a,A+10,b}.
+
+In addition, a number of predefined macros provide information about the
+current module. They are as follows:
+
+• ?FILE expands to the current filename
+• ?MODULE expands to the current module name
+• ?LINE expands to the current line number

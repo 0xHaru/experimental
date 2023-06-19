@@ -1,0 +1,25 @@
+Source: Programming Erlang p. 69
+
+One point that can lead to confusion is the use of a final true guard in an if
+expression. If you come from a language like C, you can write an if statement
+that does not have an else part, like this:
+
+if( a > 0) {
+    do_this();
+}
+
+So, you might be tempted to write the following in Erlang:
+
+if
+    A > 0 ->
+        do_this()
+end
+
+This might lead to a problem in Erlang because if is an expression, and all
+expressions are supposed to have values. In the case where A is less or equal
+to zero, the if expression has no value. This would be an error in Erlang and
+cause the program to crash. But it would not be an error in C.
+
+To avoid a possible exception, the Erlang programmer will often add a true
+guard at the end of an if expression. Of course, if they want an exception to
+be generated, then they omit the additional true guard.

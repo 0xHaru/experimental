@@ -1,0 +1,19 @@
+Source: Programming Erlang p. 136
+
+TLDR: Always use =:= (instead of ==)
+
+You should also be really careful about using == (especially if you’re a C or
+Java programmer). In 99 out of 100 cases, you should be using =:=. == is
+useful only when comparing floats with integers. =:= is for testing whether
+two terms are identical.
+
+Identical means having the same value (like the Common Lisp EQUAL). Since
+values are immutable, this does not imply any notion of pointer identity. If
+in doubt, use =:=, and be suspicious if you see ==. Note that a similar comment
+applies to using /= and =/=, where /= means “not equal to” and =/= means “not
+identical.”
+
+Note: In a lot of library and published code, you’ll see == used when the
+operator should have been =:=. Fortunately, this kind of error does not often
+result in an incorrect program, since if the arguments to == do not contain
+any floats, then the behaviors of the two operators are the same.

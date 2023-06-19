@@ -1,0 +1,16 @@
+Source: Programming Erlang p. 64
+
+TLDR: ; = OR    |   , = AND
+
+A guard sequence is either a single guard or a series of guards, separated by
+semicolons (;). The guard sequence G1; G2; ...; Gn is true if at least one of the
+guards G1, G2, ... evaluates to true.
+
+A guard is a series of guard expressions, separated by commas (,). The guard
+GuardExpr1, GuardExpr2, ..., GuardExprN is true if all the guard expressions GuardExpr1,
+GuardExpr2, ... evaluate to true.
+
+...
+
+In addition, guards cannot call user-defined functions, since we want to
+guarantee that they are side effect free and terminate.

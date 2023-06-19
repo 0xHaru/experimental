@@ -1,0 +1,20 @@
+Source: Programming Erlang p. 90
+
+Remember, everything in Erlang is an expression, and all expressions have values.
+
+---
+
+Source: Programming Erlang p. 182
+
+Pid1 ! Pid2 ! ... ! Msg means send the message Msg to all the processes Pid1, Pid2, and so on.
+
+---
+
+Source: Programming Erlang p. 183
+
+When a spawn command is executed, the system creates a new process. Each process
+has an associated mailbox that is also created when the process is created.
+
+When you send a message to a process, the message is put into the mailbox
+of the process. The only time the mailbox is examined is when your program
+evaluates a receive statement.

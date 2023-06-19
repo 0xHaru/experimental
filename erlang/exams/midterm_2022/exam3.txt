@@ -1,0 +1,26 @@
+### Traccia Pari ###
+
+- implementa 3 moduli:
+    - client
+    - mm
+    - server
+
+- la struttura dei processi è:
+    - client che messaggia con mm1 e mm2,
+    - mm1 ed mm2 che messaggiano con server e ricevono da client,
+    - server che riceve dai due mm e non invia nessun messaggio.
+
+- client:
+    esporta le funzioni:
+    - start/0: che inizializza altri 3 nodi: mm1, mm2 (del modulo mm), e server (del modulo server)
+    - close/0: che termina in maniera "graceful" i nodi
+    - do_reverse/1: input una lista, divide la lista in 2 parti (se la lista originale ha lunghezza dispari l'elemento centrale e' presente sia come ultimo elemento della prima lista che come primo elemento della seconda), invia la prima lista ad mm1 e la seconda ad mm2.
+
+- mm:
+    - riceve una lista dal client ed invia un elemento alla volta della lista al server.
+
+- server:
+    - riceve gli elementi da mm1 ed mm2 e deve stampare la lista originale (del client) al contrario.
+
+l'esercizio richiedeva di utilizzare 4 terminali come nodi, chiamati client, mm1, mm2, e server.
+era necessario stampare sul terminale del nodo le operazioni effettuate (quindi dal terminale mm1 dovevo stampare: "sto inviando l'elemento x al server"), il server doveva stampare: " la lista xy al contrario e: yx "
