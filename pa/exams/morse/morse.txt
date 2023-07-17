@@ -1,0 +1,20 @@
+Morse code is a method used in telecommunication to encode text characters as standardized sequences of two different signal durations, called dots and dashes, or dits and dahs. Morse code is named after Samuel Morse, one of the inventors of the telegraph.
+
+Morse code can be memorized and sent in a form perceptible to the human senses, e.g. via sound waves or visible light, such that it can be directly interpreted by persons trained in the skill. Morse code is usually transmitted by on-off keying of an information-carrying medium such as electric current, radio waves, visible light, or sound waves. The current or wave is present during the time period of the dit or dah and absent during the time between dits and dahs.
+
+A	.-	B	-...	C	-.-.	D	-..	E	.	F	..-.
+G	--.	H	....	I	..	J	.---	K	-.-	L	.-..
+M	--	N	-.	O	---	P	.--.	Q	--.-	R	.-.
+S	...	T	-	U	..-	V	...-	W	.--	X	-..-
+Y	-.--	Z
+
+The symbol to separate two word is a space. The symbol to separate two symbols inside a word is an unbreakable space '␣'. The symbol to represent a dot is '.' whereas a dash is represented by '-'
+
+>>>>> To do: create a Class Morse that have two func: encode(text) and decode(morse_text) <<<<<
+
+The excercise must focus on the choice/design of a proper best data structure and algorith.
+RULES:
+- CANNOT USE PYTHON'S DICT OR ANY PRIMITIVE DATA STRUCTURE OF PYTHON APART THE LIST
+- THE USE OF itertools IS FORBIDDEN
+
+This excercise worth 16/30
